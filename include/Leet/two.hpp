@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 namespace two {
 inline int maxArea(std::vector<int>& height)
@@ -18,7 +18,8 @@ inline int maxArea(std::vector<int>& height)
     return result;
 }
 
-inline std::vector<int> partitionLabels(std::string s) {
+inline std::vector<int> partitionLabels(std::string s)
+{
     std::vector<int> result;
     std::map<char, int> charIndex;
     // ababcbacadefegdehijhklij
@@ -48,7 +49,6 @@ inline std::vector<int> partitionLabels(std::string s) {
             start = cur;
             result.push_back(temp);
         }
-
     }
 
     return result;

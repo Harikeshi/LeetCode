@@ -24,4 +24,4 @@ TEST(TwoTest, PartitionLabels2)
     std::string s = "eccbbbbdec";
     EXPECT_TRUE(two::partitionLabels(s) == std::vector<int>({10}));
 }
-} // namespace list
+} // namespace two

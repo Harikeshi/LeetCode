@@ -16,9 +16,9 @@ https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 https://leetcode.com/problems/single-number/ - решить за O(1) по памяти
 https://leetcode.com/problems/two-sum/
 https://leetcode.com/problems/4sum/
-https://leetcode.com/problems/group-anagrams/
-https://leetcode.com/problems/valid-anagram/
-https://leetcode.com/problems/find-all-anagrams-in-a-string/
+https://leetcode.com/problems/group-anagrams/ - Собрать unordered_map<string(отсортированная),vector<string>>
+https://leetcode.com/problems/valid-anagram/ - Собрать две map или один вектор букв длиной 26 при первом проходе прибавлять, при втором вычитать.
+https://leetcode.com/problems/find-all-anagrams-in-a-string/ - Скользящее окно, через вектора букв.
 
  queue/stack:
 https://leetcode.com/problems/valid-parentheses/
