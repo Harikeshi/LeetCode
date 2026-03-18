@@ -7,57 +7,57 @@
 // bool isBalanced(TreeNode* root);
 // std::vector<std::vector<int>> pathSum(TreeNode* root, int targetSum);
 namespace tree {
-TEST(TwoTest, IsSameTree1)
+TEST(TreeTest, IsSameTree1)
 {
     tree::TreeNode* tree1 = new tree::TreeNode(1, new tree::TreeNode(2), new tree::TreeNode(3));
     tree::TreeNode* tree2 = new tree::TreeNode(1, new tree::TreeNode(2), new tree::TreeNode(3));
     EXPECT_TRUE(tree::isSameTree(tree1, tree2));
 }
 
-TEST(TwoTest, IsSameTree2)
+TEST(TreeTest, IsSameTree2)
 {
     tree::TreeNode* tree1 = new tree::TreeNode(1, new tree::TreeNode(2), nullptr);
     tree::TreeNode* tree2 = new tree::TreeNode(1, nullptr, new tree::TreeNode(2));
     EXPECT_FALSE(tree::isSameTree(tree1, tree2));
 }
 
-TEST(TwoTest, IsSameTree3)
+TEST(TreeTest, IsSameTree3)
 {
     tree::TreeNode* tree1 = new tree::TreeNode(1, new tree::TreeNode(2), new tree::TreeNode(1));
     tree::TreeNode* tree2 = new tree::TreeNode(1, new tree::TreeNode(1), new tree::TreeNode(2));
     EXPECT_FALSE(tree::isSameTree(tree1, tree2));
 }
-TEST(TwoTest, IsSymmetric1)
+TEST(TreeTest, IsSymmetric1)
 {
     std::vector<int*> arr = {new int(1), new int(2), new int(2), new int(3), new int(4), new int(4), new int(3)};
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_TRUE(tree::isSymmetric(tree));
 }
-TEST(TwoTest, IsSymmetric2)
+TEST(TreeTest, IsSymmetric2)
 {
     std::vector<int*> arr = {new int(1), new int(2), new int(2), nullptr, new int(3), nullptr, new int(3)};
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_FALSE(tree::isSymmetric(tree));
 }
-TEST(TwoTest, IsBalanced1)
+TEST(TreeTest, IsBalanced1)
 {
     std::vector<int*> arr = {new int(3), new int(9), new int(20), nullptr, nullptr, new int(15), new int(7)};
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_TRUE(tree::isBalanced(tree));
 }
-TEST(TwoTest, IsBalanced2)
+TEST(TreeTest, IsBalanced2)
 {
     std::vector<int*> arr = {new int(1), new int(2), new int(2), new int(3), new int(3), nullptr, nullptr, new int(4), new int(4)};
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_FALSE(tree::isBalanced(tree));
 }
-TEST(TwoTest, IsBalanced3)
+TEST(TreeTest, IsBalanced3)
 {
     std::vector<int*> arr = {};
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_TRUE(tree::isBalanced(tree));
 }
-TEST(TwoTest, PathSum1)
+TEST(TreeTest, PathSum1)
 {
     std::vector<int*> arr = {new int(5), new int(4), new int(8), new int(11), nullptr, new int(13), new int(4), new int(7), new int(2), nullptr, nullptr, new int(5), new int(1)};
     auto targetSum = 22.;
@@ -65,14 +65,14 @@ TEST(TwoTest, PathSum1)
     tree::TreeNode* tree = tree::buildTree(arr);
     EXPECT_TRUE(tree::pathSum(tree, targetSum) == result);
 }
-TEST(TwoTest, PathSum2)
+TEST(TreeTest, PathSum2)
 {
     auto targetSum = 5.;
     std::vector<std::vector<int>> result{};
     tree::TreeNode* tree = new tree::TreeNode(1, new tree::TreeNode(2), new tree::TreeNode(3));
     EXPECT_TRUE(tree::pathSum(tree, targetSum) == result);
 }
-TEST(TwoTest, PathSum3)
+TEST(TreeTest, PathSum3)
 {
     auto targetSum = 0.;
     std::vector<std::vector<int>> result{};

@@ -56,7 +56,7 @@ TEST(HashTableTest, FourSum2)
     std::vector<int> nums = {2, 2, 2, 2, 2};
     int target = 8;
     std::vector<std::vector<int>> result = {{2, 2, 2, 2}};
-    EXPECT_TRUE(hashtable::twoSum(nums, target) == std::vector<int>({1, 2}));
+    EXPECT_TRUE(hashtable::fourSum(nums, target) == result);
 }
 
 TEST(HashTableTest, GroupAnagrams1)

@@ -2,7 +2,7 @@
 
 #include <algorithm>
 #include <unordered_map>
-
+#include <map>
 namespace hashtable {
 
 int singleNumber(std::vector<int>& nums)
@@ -19,18 +19,15 @@ int singleNumber(std::vector<int>& nums)
 
 std::vector<int> twoSum(std::vector<int>& nums, int target)
 {
-    std::unordered_multimap<int, int> m;
-    for (int i = 0; i != nums.size(); ++i)
-        m.insert({nums[i], i});
-
-    for (int i = 0; i < nums.size(); i++)
-    {
-        auto it = m.find(target - nums[i]);
-        if (it != m.end() && i != it->second)
-            return (i > it->second) ? std::vector<int>({it->second, i}) : std::vector<int>({i, it->second});
+    std::unordered_map<int, int> num_map;
+    for (int i = 0; i < nums.size(); i++) {
+        int complement = target - nums[i];
+        if (num_map.find(complement) != num_map.end()) {
+            return {num_map[complement], i};
+        }
+        num_map[nums[i]] = i; // Записываем в словарь
     }
-
-    return std::vector<int>{};
+    return {};
 }
 
 std::vector<std::vector<int>> fourSum(std::vector<int>& nums, int target)
