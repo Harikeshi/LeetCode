@@ -3,14 +3,30 @@
 namespace greedy {
 int maxProfit1(std::vector<int>& prices)
 {
-    int profit{0};
+    int sum = 0;
+    int last = prices[0];
+    for (auto price : prices)
+    {
+        if (price < last)
+        {
+            last = price;
+            continue;
+        }
 
-    return profit;
+        if (price - last > sum)
+            sum = price - last;
+    }
+    return sum;
 }
 
 int maxProfit2(std::vector<int>& prices)
 {
     int profit{0};
+    for (int i = 1; i != prices.size(); ++i) {
+        if (prices[i] > prices[i - 1]) {
+            profit += prices[i] - prices[i - 1];
+        }
+    }
 
     return profit;
 }

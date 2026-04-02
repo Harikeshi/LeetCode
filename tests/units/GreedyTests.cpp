@@ -24,13 +24,13 @@ TEST(GreedyTest, MaxProfit11)
 {
     std::vector<int> prices = {7, 1, 5, 3, 6, 4};
     int target = 5;
-    EXPECT_TRUE(greedy::maxProfit2(prices) == target);
+    EXPECT_TRUE(greedy::maxProfit1(prices) == target);
 }
 TEST(GreedyTest, MaxProfit12)
 {
     std::vector<int> prices = {7, 6, 4, 3, 1};
     int target = 0;
-    EXPECT_TRUE(greedy::maxProfit2(prices) == target);
+    EXPECT_TRUE(greedy::maxProfit1(prices) == target);
 }
 TEST(GreedyTest, MaxProfitTransaction1)
 {
