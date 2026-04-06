@@ -1,4 +1,4 @@
-#include "leet/tree.hpp"
+#include <Leet/tree.hpp>
 
 #include <vector>
 #include <iostream>

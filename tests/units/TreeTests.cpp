@@ -1,4 +1,4 @@
-#include "leet/tree.hpp"
+#include <Leet/tree.hpp>
 
 #include <Leet/two.hpp>
 #include <gtest/gtest.h>

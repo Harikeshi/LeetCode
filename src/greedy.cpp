@@ -1,4 +1,4 @@
-#include "Leet/greedy.hpp"
+#include <Leet/greedy.hpp>
 
 namespace greedy {
 int maxProfit1(std::vector<int>& prices)

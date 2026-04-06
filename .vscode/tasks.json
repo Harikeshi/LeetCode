@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/build" // Указываем, что все действия нужно делать в папке build
+    },
+    "tasks": [
+        {
+            "label": "Configure", // 1. Настройка (CMake)
+            "type": "shell",
+            "command": "cmake",
+            "args": [".."],
+            "dependsOn": [] 
+        },
+        {
+            "label": "Build", // 2. Сборка (Make/Ninja)
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "."], // Сборка в текущей (build) директории
+            "dependsOn": ["Configure"] // Сначала запустить настройку
+        },
+        {
+            "label": "Build All", // 3. Главная задача (Ctrl+Shift+B)
+            "dependsOn": ["Configure", "Build"],
+            "dependsOrder": "sequence", // Выполнять задачи строго по очереди
+            "group": {
+                "kind": "build",
+                "isDefault": true // Делаем эту задачу задачей сборки по умолчанию
+            }
+        }
+    ]
+}
