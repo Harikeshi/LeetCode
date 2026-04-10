@@ -5,7 +5,7 @@ namespace b_search {
 
 int search(std::vector<int>& nums, int target)
 {
-    int left = 0, right = nums.size() - 1;
+    int left = 0, right = static_cast<int>(nums.size() - 1);
     while (left <= right)
     {
         int mid = left + (right - left) / 2;
@@ -59,7 +59,7 @@ int guessNumber(int n, int pick)
 
 bool searchMatrix(std::vector<std::vector<int>>& matrix, int target)
 {
-    int left = 0, right = matrix.size();
+    int left = 0, right = static_cast<int>(matrix.size());
 
     while (left <= right)
     {
@@ -75,7 +75,7 @@ bool searchMatrix(std::vector<std::vector<int>>& matrix, int target)
         else
         {
             // поиск внутри матрицы
-            left = 0, right = matrix[mid].size() - 1;
+            left = 0, right = static_cast<int>(matrix[mid].size() - 1);
             while (left <= right)
             {
                 int _mid = left + (right - left) / 2;
@@ -97,7 +97,7 @@ int rotateSearch(std::vector<int>& nums, int target)
     // target 7
     // [2,4,5,6,7,0,1]
     // [7,0,1,2,4,5,6]
-    int left = 0, right = nums.size() - 1;
+    int left = 0, right = static_cast<int>(nums.size() - 1);
     while (left <= right)
     {
         int mid = left + (right - left)/2;
@@ -130,7 +130,7 @@ int rotateSearch(std::vector<int>& nums, int target)
 
 int findMin(std::vector<int>& nums)
 {
-    int left = 0; int right = nums.size() - 1;
+    int left = 0; int right = static_cast<int>(nums.size() - 1);
 
     while (left < right)
     {
@@ -160,7 +160,7 @@ bool search2(std::vector<int>& nums, int target)
     // target 7
     // [2,4,5,6,7,0,1]
     // [7,0,1,2,4,5,6]
-    int left = 0, right = nums.size() - 1;
+    int left = 0, right = static_cast<int>(nums.size() - 1);
     while (left <= right)
     {
         int mid = left + (right - left)/2;
